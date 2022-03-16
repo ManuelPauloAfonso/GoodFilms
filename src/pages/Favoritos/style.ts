@@ -24,6 +24,10 @@ export const section = styled.section`
         
         
     }
+    article:hover{
+        opacity: 0.7;
+        cursor: pointer;
+    }
     article button{
         background-color: black;
         color: white;
