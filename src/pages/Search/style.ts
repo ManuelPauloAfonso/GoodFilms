@@ -44,12 +44,13 @@ export const section = styled.section`
     opacity: 0.3;
     background-color: black;
 }
-.item-movie-main{
+.item-movie-main {
     display: grid;
-    gap: 1rem;
-    grid-template-columns: repeat(auto-fit, minmax(136px, 1fr));
-    margin-top: 100px;
+    grid-template-columns: repeat(5, 1fr);
+    margin: 0 auto;
+    grid-gap: 20px;
 }
+
 .favorite{
     position: fixed;
     bottom: 0px;
