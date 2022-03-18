@@ -5,15 +5,6 @@ import {FiHeart} from 'react-icons/fi'
 import {Link} from 'react-router-dom'
 import api from '../../services/api';
 
-type Userprops = {
-    Title: string;
-    Year: string;
-    imdbID: string;
-    Type: string;
-    Poster: string;
-
-}
-
 
 interface User{
     Title: string;
@@ -23,7 +14,7 @@ interface User{
     Poster: string;
 }
 
-export default function Search(props: Userprops){
+export default function Search(){
     const [users, setUsers] = useState<User[]>();
     const [movie, setMovie] = useState<string>("");
 
