@@ -35,10 +35,17 @@ export const section = styled.section`
 }
 .item-movie ul, li{
     list-style: none;
+
 }
 .item-movie{
+    height: 250px;
     position: relative;
-    height: 240px;
+   
+}
+.item-movie img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 .item-movie a:hover{
     opacity: 0.3;
@@ -48,7 +55,11 @@ export const section = styled.section`
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     margin: 0 auto;
-    grid-gap: 20px;
+    grid-gap: 10px;
+    width: 100%;
+    max-width: 1080px;
+    margin-top: 50px;
+    
 }
 
 .favorite{
@@ -70,6 +81,27 @@ export const section = styled.section`
     width: 100%;
     height: 100%;
     padding: 0px 10px;
+}
+a{
+    text-decoration: none;
+}
+.item-movie-title{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    max-width: 100% 
+}
+.item-movie-title strong{
+    font-size: 0.800rem;
+    text-decoration: none;
+    list-style: none;
+    color: white;
+    font-weight: bold;
+}
+.item-movie-title span{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
 }
 
 

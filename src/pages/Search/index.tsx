@@ -1,15 +1,19 @@
 import React, { useState, useEffect } from 'react'
 import * as S from './style'
 import {FiHome} from 'react-icons/fi'
-import {FiStar} from 'react-icons/fi'
+import {FiHeart} from 'react-icons/fi'
 import {Link} from 'react-router-dom'
 import api from '../../services/api';
 
-import Movie from '../../assets/manuel.jpg'
-import Movie1 from '../../assets/Manuel2.jpg'
-import Movie2 from '../../assets/Manuel5.jpg'
-import Movie3 from '../../assets/manuel23.jpg'
-import Movie4 from '../../assets/manueldd.jpg'
+type Userprops = {
+    Title: string;
+    Year: string;
+    imdbID: string;
+    Type: string;
+    Poster: string;
+
+}
+
 
 interface User{
     Title: string;
@@ -19,7 +23,7 @@ interface User{
     Poster: string;
 }
 
-export default function Search(){
+export default function Search(props: Userprops){
     const [users, setUsers] = useState<User[]>();
     const [movie, setMovie] = useState<string>("");
 
@@ -48,15 +52,21 @@ export default function Search(){
                     <button onClick={clearInput}>Limpar</button>
 
                 </div>
-                {users?.map((movie, index) => ( 
-                        <ul key={index} className="item-movie-main">
-                            <li className="item-movie"><a href=""><img src={movie?.Poster ?? ""} alt="" /></a></li>
-                        </ul>
-                ))}
-                
+                <ul className="item-movie-main">
+                    {users?.map((movie, index) => ( 
+                                <li key={index} className="item-movie">
+                                    <a href=""><img src={movie?.Poster ?? ""} alt="" />
+                                    <div className="item-movie-title">
+                                        <strong>{movie?.Title ?? ""}</strong> <br />
+                                        <span>{movie?.Year ?? ""}</span>
+                                    </div>
+                                    </a>
+                                </li>
+                    ))}
+                </ul>                
                 <div className="favorite">
                     <Link to=""><FiHome /></Link>
-                    <Link to="/Favoritos"><FiStar /></Link>
+                    <Link to="/Favoritos"><FiHeart /></Link>
                 </div>
             </div>
 
