@@ -23,11 +23,18 @@ export default function Home(){
           `https://www.omdbapi.com/?s=${movie}&type=movie&page=1&apikey=c058e812`
         );
         setUsers(response.data?.Search ?? []);
+        setShowTitle(!showTitle)
+        
+
+        
+
+        
       };
     
       const clearInput = () => {
         setMovie("");
       };
+      
 
     
     return(
